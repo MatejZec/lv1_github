@@ -43,17 +43,23 @@ function Dodaj() {
         "<span class='glyphicon glyphicon-remove' />" +
         "</button>" +
         "</td>" +
-        "<td>" + "<button type='button' onclick='PromjeniBoju(this);' class='btn btn-default'>" +
+        /*"<td>" + "<button type='button' onclick='PromjeniBoju(this);' class='btn btn-default'>" +
         "<span class='glyphicon glyphicon-ok' />" +
-        "</button>" +
+        "</button>" +*/
+        "<td>" + "<input type='checkbox' onclick='selectOrgChildRec(this)'  />" +
         "</td>" +
         "</tr>");
 }
 
-function Obrisi(ctl) {
+function Obrisi(ctl) 
+{
     $(ctl).parents("tr").remove();
 }
 
-function PromjeniBoju(ctl) {
-    
+function selectOrgChildRec(ctrl){
+    $(ctrl).closest('tr').toggleClass('aktivan');
 }
+/*function PromjeniBoju(ctl) 
+{
+    $(ctl).closest('tr').css('background-color', 'green');
+}*/
