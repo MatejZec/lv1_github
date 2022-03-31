@@ -43,9 +43,18 @@ function Dodaj() {
         "<span class='glyphicon glyphicon-remove' />" +
         "</button>" +
         "</td>" +
+        "<td>" + "<button type='button' onclick='PromjeniBoju(this);' class='btn btn-default'>" +
+        "<span class='glyphicon glyphicon-ok' />" +
+        "</button>" +
+        "</td>" +
         "</tr>");
 }
 
 function Obrisi(ctl) {
     $(ctl).parents("tr").remove();
+}
+
+function PromjeniBoju(ctl) {
+    $(ctl).removeClass('selected');
+    $(ctl).closest('tr').addClass('selected');
 }
