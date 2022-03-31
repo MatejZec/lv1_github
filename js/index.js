@@ -1,28 +1,4 @@
-/*function Dodaj()
-{
 
-	var nazivPredmeta = document.getElementById('inptNazivPredemta').value;
-	var godinaSemestar = document.getElementById('inptGodinaSemestar').value;
-	var ectsBodovi  = document.getElementById('inptECTS').value;
-
-	var tbodyRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
-
-	// Insert a row at the end of table
-	var newRow = tbodyRef.insertRow();
-
-	// Insert a cell at the end of the row
-	var newCell1 = newRow.insertCell();
-	var newCell2 = newRow.insertCell();
-	var newCell3 = newRow.insertCell();
-
-	// Append a text node to the cell
-	var newTextNP = document.createTextNode(nazivPredmeta);
-	newCell1.appendChild(newTextNP);
-	var newTextGS = document.createTextNode(godinaSemestar);
-	newCell2.appendChild(newTextGS);
-	var newTextECTS = document.createTextNode(ectsBodovi);
-	newCell3.appendChild(newTextECTS);
-}*/
 
 function Dodaj() {
 	var nazivPredmeta = document.getElementById('inptNazivPredemta').value;
@@ -63,3 +39,28 @@ function selectOrgChildRec(ctrl){
 {
     $(ctl).closest('tr').css('background-color', 'green');
 }*/
+
+$(document).ready(function(){  
+    $('#search').keyup(function(){  
+         search_table($(this).val());  
+    });  
+    function search_table(value){  
+         $('#myTable tr').each(function(){  
+              var found = 'false';  
+              $(this).each(function(){  
+                   if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)  
+                   {  
+                        found = 'true';  
+                   }  
+              });  
+              if(found == 'true')  
+              {  
+                   $(this).show();  
+              }  
+              else  
+              {  
+                   $(this).hide();  
+              }  
+         });  
+    }  
+});
