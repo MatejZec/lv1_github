@@ -55,6 +55,5 @@ function Obrisi(ctl) {
 }
 
 function PromjeniBoju(ctl) {
-    $(ctl).removeClass('selected');
-    $(ctl).closest('tr').addClass('selected');
+    
 }
