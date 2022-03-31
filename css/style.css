@@ -1,5 +1,7 @@
 table, th, td {
   border: 1px solid;
+  width: 200px;
+  text-align: center;
 }
 .aktivan{
   background-color:rgb(83, 201, 83);
